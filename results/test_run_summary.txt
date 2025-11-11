@@ -1,0 +1,92 @@
+================================================================================
+VCF Annotation and Filtering Pipeline - Summary Report
+================================================================================
+Generated: 2025-11-10 19:56:21
+Input File: data/test_sample.vcf.gz
+Output Prefix: test_run
+Results Directory: results
+
+Annotation Tool: SnpEff
+Reference Assembly: GRCh38.99
+SnpEff Location: /Users/emrunali/tools/snpEff
+
+Variant Statistics:
+-------------------
+Input Variants:     2000
+Total Annotated Variants:     2000
+
+Impact Distribution:
+--------------------
+HIGH Impact Variants:        0 (0.0%)
+  - Stop gained/lost, frameshift, splice site disruptions
+  - Likely loss of function or significant protein disruption
+
+MODERATE Impact Variants:        0 (0.0%)
+  - Missense variants, in-frame indels
+  - May affect protein function
+
+Coding Variants (All):        0 (0.0%)
+  - All variants affecting protein coding sequence
+
+Output Files:
+-------------
+1. test_run_annotated.vcf.gz
+   - All variants with complete SnpEff functional annotations
+   - Includes impact predictions, gene names, transcript IDs
+   
+2. test_run_high_impact.vcf.gz
+   - HIGH impact variants only (priority for clinical review)
+   - Stop codons, frameshifts, splice site disruptions
+   
+3. test_run_moderate_impact.vcf.gz
+   - MODERATE impact variants (missense, in-frame indels)
+   - Require additional evidence for pathogenicity assessment
+   
+4. test_run_coding.vcf.gz
+   - All coding region variants combined
+   - Useful for gene panel analysis
+   
+5. test_run_snpeff_summary.html
+   - Interactive HTML report with charts and statistics
+   - Open in web browser for detailed visualization
+   
+6. test_run_snpeff_summary.csv
+   - Machine-readable statistics for downstream analysis
+   
+7. test_run_genes.txt
+   - List of all genes affected by variants
+   - One gene per line, useful for pathway analysis
+   
+8. test_run_pipeline.log
+   - Complete processing log with timestamps
+   - Audit trail for clinical laboratory compliance
+
+Tools Used:
+-----------
+- SnpEff 2025-09-02 for functional annotation
+- bcftools 1.22 for VCF manipulation
+- Functional impact predictions based on Sequence Ontology terms
+
+Clinical Relevance:
+-------------------
+HIGH impact variants are prioritized for clinical review as they typically
+result in protein truncation or loss of function. MODERATE impact variants
+(missense, in-frame indels) require further assessment based on:
+  - Conservation scores (phyloP, phastCons)
+  - Protein domain location and function
+  - Population frequency (gnomAD MAF < 0.01)
+  - Clinical databases (ClinVar pathogenic/likely pathogenic)
+  - In silico predictions (SIFT, PolyPhen-2, CADD)
+
+Recommended Next Steps:
+-----------------------
+1. Review HIGH impact variants in disease-relevant genes
+2. Filter by population frequency using gnomAD (MAF < 0.01)
+3. Check ClinVar for known pathogenic variants
+4. Assess MODERATE impact variants in candidate genes
+5. Prioritize based on inheritance pattern and phenotype
+6. Validate clinically significant variants via Sanger sequencing
+
+Pipeline Version: 1.0.0
+Execution Time: Complete log available in test_run_pipeline.log
+================================================================================

@@ -1,0 +1,15 @@
+# Data files — keep small examples
+data/*.vcf
+data/*.vcf.gz
+data/*.vcf.gz.tbi
+
+# Allow example files
+!data/test_direct.vcf
+!data/test_sample.vcf.gz
+!data/test_sample.vcf.gz.tbi
+
+# Results — ignore most, keep example outputs
+results/*
+!results/test_run_summary.txt
+!results/test_run_snpeff_summary.csv
+!results/test_run_snpeff_summary.html
