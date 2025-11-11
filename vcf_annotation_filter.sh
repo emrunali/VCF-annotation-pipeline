@@ -2,8 +2,6 @@
 
 ################################################################################
 # VCF Annotation and Filtering Pipeline
-# Author: [Your Name]
-# Date: 2025-11-10
 # Version: 1.0.0
 #
 # Description:
