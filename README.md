@@ -1,3 +1,5 @@
+# VCF Annotation and Filtering Pipeline
+
 ## Overview
 
 This pipeline automates the processing of VCF (Variant Call Format) files through functional annotation and multi-tier filtering to identify clinically relevant variants. It is designed with clinical laboratory best practices in mind, including comprehensive logging, audit trails, and standardized quality control metrics.
